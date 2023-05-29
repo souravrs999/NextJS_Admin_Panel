@@ -12,12 +12,14 @@ import {
 type TNestedLinks = {
   id: string;
   name: string;
+  url?: string;
 };
 
 type TPanelItem = {
   id: string;
   name: string;
   icon: (props: TablerIconsProps) => JSX.Element;
+  url?: string;
   children?: TNestedLinks[];
 };
 
@@ -32,12 +34,19 @@ export const SideBarComposition: TSideBarComposition = {
       id: "dashboard",
       name: "Dashboard",
       icon: IconApps,
-      children: [{ id: "dashboard_1", name: "Dashboard 1" }],
+      children: [
+        {
+          id: "dash_analytics",
+          name: "Analytics Dashboard",
+          url: "/dashboard",
+        },
+      ],
     },
     {
       id: "analytics",
       name: "Analaytics",
       icon: IconBrandGoogleAnalytics,
+      url: "analytics",
     },
     {
       id: "products",

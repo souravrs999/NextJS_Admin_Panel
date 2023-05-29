@@ -8,6 +8,9 @@ const SalesActivityCard = dynamic(
 const StatsCard = dynamic(() => import("@/components/StatsCard"), {
   ssr: false,
 });
+const SalesGoalCard = dynamic(() => import("@/components/SalesGoalCard"), {
+  ssr: false,
+});
 
 export default function Dashboard() {
   return (
@@ -26,6 +29,9 @@ export default function Dashboard() {
       </div>
       <div className="lg:col-span-6 sm:col-span-12 row-span-2">
         <SalesActivityCard />
+      </div>
+      <div className="sm:col-span-6 lg:col-span-3 row-span-2">
+        <SalesGoalCard />
       </div>
     </div>
   );
