@@ -6,7 +6,7 @@ const SalesActivityChart = dynamic(() => import("../SalesActivityChart"), {
 
 export default function SalesActivityCard() {
   return (
-    <div className="flex flex-col bg-primary rounded-xl p-7 w-[42rem] h-[32rem]">
+    <div className="flex flex-col bg-primary rounded-xl p-7 w-full h-full">
       <div className="flex justify-between items-center">
         <p className="text-4xl text-white">Sales Activity</p>
         <div className="text-xs text-primary font-extrabold">

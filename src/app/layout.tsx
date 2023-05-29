@@ -1,7 +1,8 @@
 import "./globals.css";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 
 import Sidebar from "@/components/Sidebar";
+import HeaderBar from "@/components/HeaderBar";
 
 export const metadata = {
   title: "Create Next App",
@@ -35,9 +36,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} font-sans`}>
         <main>
-          <div className="flex">
+          <div className="flex bg-gray-300">
             <Sidebar />
-            <div className="w-full">{children}</div>
+            <div className="flex flex-col w-full mr-1">
+              <HeaderBar />
+              <div className="w-full">{children}</div>
+            </div>
           </div>
         </main>
       </body>
