@@ -4,6 +4,52 @@ import React, { ChangeEvent, useState } from "react";
 import { IconSearch } from "@tabler/icons-react";
 import cn from "classnames";
 
+type TData = {
+  id: number;
+  name: string;
+  count: number;
+  amount: string;
+  date: string;
+};
+
+const data: TData[] = [
+  {
+    id: 1,
+    name: "Cozy Home Furnishings",
+    count: 520,
+    amount: "$11,190,00",
+    date: "Mon, Oct 14",
+  },
+  {
+    id: 2,
+    name: "Stellar Styles",
+    count: 520,
+    amount: "$8,292,00",
+    date: "Sat, Nov 19",
+  },
+  {
+    id: 3,
+    name: "Luxe Living Store",
+    count: 520,
+    amount: "$72,489,00",
+    date: "Sun, Aug 20",
+  },
+  {
+    id: 4,
+    name: "Reilly LLC",
+    count: 520,
+    amount: "$12,932,00",
+    date: "Tue, Mar 17",
+  },
+  {
+    id: 5,
+    name: "O'Conner - Bayer",
+    count: 520,
+    amount: "$6,323,00",
+    date: "Wed, Feb 23",
+  },
+];
+
 const ControlPanel = () => {
   const [value, setValue] = useState<string>("");
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -63,22 +109,22 @@ const ControlPanel = () => {
         </div>
       </div>
       <div className="border-t-[1px] border-gray-200 py-3">
-        {[...Array(5).keys()].map((item) => (
-          <div key={item} className="flex items-center justify-between py-3">
+        {data.map((item) => (
+          <div key={item.id} className="flex items-center justify-between py-3">
             <div className="flex gap-3 items-center">
               <div className="w-16 h-16 rounded-full bg-gray-100 font-bold grid place-items-center">
-                C
+                {item.name[0]}
               </div>
               <div className="flex flex-col gap-1">
-                <p className="text-primary text-sm font-bold">
-                  Cozy Home Furnishings
-                </p>
-                <span className="text-xs text-gray-400">520 items</span>
+                <p className="text-primary text-sm font-bold">{item.name}</p>
+                <span className="text-xs text-gray-400">
+                  {item.count} items
+                </span>
               </div>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-primary text-sm font-bold">$11,190,00</p>
-              <span className="text-xs text-gray-400">Mon, Oct 14</span>
+              <p className="text-primary text-sm font-bold">{item.amount}</p>
+              <span className="text-xs text-gray-400">{item.date}</span>
             </div>
           </div>
         ))}
