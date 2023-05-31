@@ -1,4 +1,5 @@
 import ControlPanel from "@/components/ControlPanel";
+import { ProgressCard } from "@/components/ProgressCard";
 import dynamic from "next/dynamic";
 import React from "react";
 
@@ -36,6 +37,12 @@ export default function Dashboard() {
       </div>
       <div className="col-span-12 md:col-span-6 lg:col-span-3 row-span-2 order-6 md:order-4 lg:order-5">
         <SalesGoalCard />
+      </div>
+      <div className="lg:col-span-3 md:col-span-6 col-span-12 order-7">
+        <ProgressCard dark count={1200} description="Total cumulative orders" />
+      </div>
+      <div className="lg:col-span-3 md:col-span-6 col-span-12 order-8">
+        <ProgressCard count={2853} description="Packages in inventory" />
       </div>
     </div>
   );

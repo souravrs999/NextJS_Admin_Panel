@@ -103,13 +103,13 @@ const StatsCard = ({ dark, name, subtitle }: TStatsCard) => {
             </p>
             <span className="text-sm text-limeBright ml-2">+2.91%</span>
           </div>
-          <div className="flex-1">
+          <div className="w-full h-20">
             <ReactApexChart
               options={chartData.options}
               series={chartData.series}
               type="line"
-              height="80px"
-              width="90%"
+              height="100%"
+              width="100%"
             />
           </div>
         </div>

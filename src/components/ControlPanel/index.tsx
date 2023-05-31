@@ -110,7 +110,10 @@ const ControlPanel = () => {
       </div>
       <div className="border-t-[1px] border-gray-200 py-3">
         {data.map((item) => (
-          <div key={item.id} className="flex items-center justify-between py-3">
+          <div
+            key={item.id}
+            className="flex items-center justify-between py-3 w-full"
+          >
             <div className="flex gap-3 items-center">
               <div className="w-16 h-16 rounded-full bg-gray-100 font-bold grid place-items-center">
                 {item.name[0]}
