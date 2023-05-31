@@ -35,12 +35,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} font-sans`}>
-        <main>
-          <div className="flex bg-gray-300">
-            <Sidebar />
-            <div className="flex flex-col w-full mr-1">
+        <main className="bg-gray-300">
+          <div className="flex w-full gap-1 h-screen m-auto">
+            <div className="hidden sm:block max-h-[1080px]">
+              <Sidebar />
+            </div>
+            <div className="flex flex-col w-full">
               <HeaderBar />
-              <div className="w-full">{children}</div>
+              <div className="w-full h-screen overflow-y-auto rounded-lg">
+                {children}
+              </div>
             </div>
           </div>
         </main>

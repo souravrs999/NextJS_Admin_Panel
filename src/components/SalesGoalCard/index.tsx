@@ -9,6 +9,7 @@ const SalesGoalCard = () => {
   const options: ApexOptions = {
     chart: {
       type: "radialBar",
+      redrawOnParentResize: true,
     },
     colors: ["#080e13", "#23262e", "#9CA3AF"],
     series: [70, 75, 80],
@@ -30,7 +31,7 @@ const SalesGoalCard = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3 bg-white p-7 rounded-lg">
+    <div className="flex flex-col gap-3 bg-white p-7 rounded-lg w-full h-full">
       <div className="flex justify-between items-center">
         <div className="flex items-center">
           <p className="text-primary font-bold">Sales Goal</p>
@@ -61,7 +62,8 @@ const SalesGoalCard = () => {
           options={options}
           series={options.series}
           type="radialBar"
-          height={300}
+          width="100%"
+          // height={300}
         />
       </div>
       <div className="flex flex-col gap-5">

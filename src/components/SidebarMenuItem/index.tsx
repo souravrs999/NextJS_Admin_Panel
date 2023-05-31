@@ -60,7 +60,7 @@ export default function SidebarMenuItem({
           <menu.icon className="text-white w-5 h-5" />
           <p
             className={cn({
-              invisible: collapsed,
+              hidden: collapsed,
               "text-white text-xs": true,
             })}
           >
@@ -70,7 +70,7 @@ export default function SidebarMenuItem({
         {marker && (
           <div
             className={cn({
-              invisible: collapsed,
+              hidden: collapsed,
               "grid place-content-center w-4 h-4 rounded-full bg-success": true,
             })}
           >
@@ -78,7 +78,7 @@ export default function SidebarMenuItem({
           </div>
         )}
         {child && (
-          <div className="p-1">
+          <div className={cn({ "p-1": true, hidden: collapsed })}>
             <IconChevronDown className="h-4 w-4 text-gray-500" />
           </div>
         )}

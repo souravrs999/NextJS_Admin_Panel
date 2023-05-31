@@ -20,7 +20,7 @@ export default function SalesActivityCard() {
         </p>
       </div>
       <div className="flex h-full mt-3">
-        <div className="w-5/6">
+        <div className="w-5/6 overflow-hidden">
           <SalesActivityChart />
         </div>
         <div className="w-l/6 ml-3 flex flex-col items-end justify-end mb-5">

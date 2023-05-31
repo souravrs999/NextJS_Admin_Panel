@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import Image from "next/image";
 
@@ -9,13 +9,10 @@ import { SideBarComposition } from "@/config";
 import SidebarMenuItem from "../SidebarMenuItem";
 
 export default function Sidebar({}) {
-  const sidebarRef = useRef<HTMLDivElement | null>(null);
   const [collapsed, setCollapsed] = useState<boolean>(true);
 
   const handleSidebarCollapse = () => {
-    if (!sidebarRef.current || sidebarRef.current.clientWidth < 100)
-      setCollapsed(false);
-    else setCollapsed(true);
+    setCollapsed((val) => !val);
   };
 
   return (
@@ -28,7 +25,6 @@ export default function Sidebar({}) {
       })}
     >
       <div
-        ref={sidebarRef}
         className="bg-primary rounded-lg overflow-hidden h-full"
         onMouseEnter={handleSidebarCollapse}
         onMouseLeave={handleSidebarCollapse}
@@ -50,7 +46,7 @@ export default function Sidebar({}) {
               </div>
               <div
                 className={cn({
-                  invisible: collapsed,
+                  hidden: collapsed,
                   "flex overflow-hidden items-center justify-between w-full px-3 transition-all duration-500 ease-in-out":
                     true,
                 })}

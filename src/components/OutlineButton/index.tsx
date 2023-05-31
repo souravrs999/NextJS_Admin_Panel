@@ -7,7 +7,7 @@ interface TOutlineButton {
 
 export default function OutlineButton({ primary, value }: TOutlineButton) {
   return (
-    <div className="rounded-lg border-[1px] border-gray-400 px-4 py-3 hover:bg-gray-100 cursor-pointer">
+    <div className="rounded-lg border-[1px] border-gray-400 px-3 py-2 hover:bg-gray-100 cursor-pointer">
       <p className="text-primary text-sm font-bold">{value}</p>
     </div>
   );

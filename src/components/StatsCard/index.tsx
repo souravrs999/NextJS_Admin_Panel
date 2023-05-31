@@ -31,7 +31,6 @@ const StatsCard = ({ dark, name, subtitle }: TStatsCard) => {
         type: "line",
         toolbar: { show: false },
         zoom: { enabled: false },
-        redrawOnParentResize: true,
       },
       colors: dark ? ["#FFFFFF"] : ["#23262e"],
       dataLabels: {
@@ -63,7 +62,7 @@ const StatsCard = ({ dark, name, subtitle }: TStatsCard) => {
   return (
     <div
       className={cn({
-        "rounded-lg p-5 border-[1px] flex flex-col gap-3": true,
+        "rounded-lg p-5 border-[1px] flex flex-col gap-3 w-full h-full": true,
         "bg-primary border-primary": dark,
         "bg-white border-gray-200": !dark,
       })}
@@ -104,12 +103,12 @@ const StatsCard = ({ dark, name, subtitle }: TStatsCard) => {
             </p>
             <span className="text-sm text-limeBright ml-2">+2.91%</span>
           </div>
-          <div>
+          <div className="flex-1">
             <ReactApexChart
               options={chartData.options}
               series={chartData.series}
               type="line"
-              height="70px"
+              height="80px"
               width="90%"
             />
           </div>
@@ -125,7 +124,7 @@ const StatsCard = ({ dark, name, subtitle }: TStatsCard) => {
             Profit is Taken
           </p>
           <span className="text-xs text-gray-500 ml-1">
-            = $278,801 (~20% fees)
+            $278,801 (~20% fees)
           </span>
         </div>
       </div>

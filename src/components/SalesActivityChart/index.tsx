@@ -9,6 +9,8 @@ const SalesActivityChart = () => {
     chart: {
       type: "bar",
       toolbar: { show: false },
+      redrawOnParentResize: true,
+      events: { mounted: (chart) => chart.windowResizeHandler() },
     },
     colors: ["#9CA3AF"],
     plotOptions: {
